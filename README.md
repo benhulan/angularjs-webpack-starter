@@ -8,7 +8,7 @@
 
 The goal of this repository is to demonstrate a modern frontend setup for [AngularJS](https://github.com/angular/angular.js) projects, in such a way that it gets closer to how things are done with Angular. This project is using [NPM](https://github.com/npm/npm) as package manager, [TypeScript](https://github.com/Microsoft/TypeScript) and [Webpack](https://github.com/webpack/webpack) as module loader.
 
-This is, by no means, ment to be used blindly in production.
+This is, by no means, meant to be used blindly in production.
 
 ## Features
 - [x] TypeScript 2

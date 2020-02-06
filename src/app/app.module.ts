@@ -5,11 +5,11 @@ import * as angular from 'angular';
  * Import Application Modules
  */
 import { moduleName as coreModule } from './core/core.module';
-import { moduleName as contactsModule } from './contacts/contacts.module';
+import { moduleName as filmsModule } from './films/films.module';
 
 export const moduleName =
   angular.module('application', [
     coreModule,
-    contactsModule
+    filmsModule,
   ])
   .name;
