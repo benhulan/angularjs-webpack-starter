@@ -1,2 +1,35 @@
 .cinema-list {
+  background-color: #FFF;
+  min-height: 132px;
+  .cinema-button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  button {
+    background-color: #FFF;
+    border-radius: 4px;
+    border: 1px solid #090909;
+    color: #090909;
+    width: 176px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    // float: left;
+    margin-bottom: 16px;
+    line-height: 20px;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    .active {
+      border: none;
+      border-radius: 4px;
+      background-color: #f0b323;
+    }
+  }
+}
+
+.film-list {
+  background-color: #FFF;
 }

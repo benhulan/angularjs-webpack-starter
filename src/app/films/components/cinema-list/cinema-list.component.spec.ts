@@ -1,5 +1,5 @@
-import * as angular from 'angular';
 import 'angular-mocks';
+import * as angular from 'angular';
 import { CinemaList } from './cinema-list.component';
 
 describe('CinemaList component', () => {

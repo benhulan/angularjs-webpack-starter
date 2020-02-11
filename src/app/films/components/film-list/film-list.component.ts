@@ -13,7 +13,7 @@ export class FilmList implements angular.IComponentOptions {
   static template = `
   <div class="film-list" ng-repeat="film in $ctrl.films">
     <a href="https://drafthouse.com/show/{{ film.slug }}" target="_new">
-      <span>{{ film.title }}</span>
+      <span>{{ film.slug }}</span>
       <i class="pull-right glyphicon glyphicon-shopping-cart"></i>
     </a>
   </div>

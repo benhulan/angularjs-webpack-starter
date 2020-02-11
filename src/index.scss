@@ -7,43 +7,103 @@
 /**
  * Global styles go here
  **/
+ body {
+   background: #e5e5e5;
+   color: #fff;
+   margin: 0px;
+ }
 
-h1 {
-  padding-top: 32px;
-}
+ a {
+   color: #090909;
+   text-decoration: none;
+   &:hover {
+     text-decoration: none;
+   }
+ }
 
-li {
-  padding: 15px 24px;
-  border: 1px solid #090909;
-  box-sizing: border-box;
-  border-radius: 4px;
-  margin-bottom: 16px;
-}
+ h1 {
+   font-size: 26px;
+   font-weight: 600;
+   line-height: 30px;
+   letter-spacing: 1.5px;
+   padding-top: 32px;
+   text-transform: uppercase;
+ }
 
-li:hover {
-  color: #f0b323;
-  background-color: #000;
-}
+ h4 {
+   color: rgba(9, 9, 9, 0.6);
+   font-size: 16px;
+   font-weight: 600;
+   line-height: 20px;
+   letter-spacing: 0.5px;
+   margin-bottom: 24px;
+   text-align: left;
+ }
 
-li:hover .cart {
-  color: #f0b323;
-}
+ li {
+   border: 1px solid #090909;
+   box-sizing: border-box;
+   border-radius: 4px;
+   font-size: 22px;
+   line-height: 28px;
+   letter-spacing: 1px;
+   list-style: none;
+   margin-bottom: 16px;
+   padding: 15px 24px;
+   text-decoration: none;
+   text-align: left;
+   &:hover {
+     color: #f0b323;
+     background-color: #090909;
+   }
 
-button {
-  color: #000;
-  width: 176px;
-  height: 40px;
-  font-size: 16px;
-  font-weight: 500;
-  float: left;
-  margin-right: 16px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
+   &:hover .cart {
+     color: #f0b323;
+   }
+ }
+
+ header {
+   position: relative;
+   text-align: center;
+ }
+ .arrow {
+   position: relative;
+   top: -560px;
+ }
+ .header-bg {
+   background: linear-gradient(159.41deg, #FF009D 3.42%, #F5B324 96.5%);
+   height: 560px;
+   transform: skewY(-3deg);
+   transform-origin: bottom left;
+ }
+
+ main {
+   padding: 1em;
+   font-family: futura-pt, sans-serif;
+   font-weight: 700;
+   font-style: normal;
+   text-align: center;
+   margin-top: 50px;
+   display: block;
+   position: relative;
+   top: -616px;
+ }
+
+// button {
+//   color: #090909;
+//   width: 176px;
+//   height: 40px;
+//   font-size: 16px;
+//   font-weight: 500;
+//   float: left;
+//   margin-right: 16px;
+//   line-height: 20px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   letter-spacing: 0.5px;
+//   text-transform: uppercase;
+// }
 
 ul {
   padding-left: 0px;
@@ -61,7 +121,7 @@ ul {
 
 .movie-card {
   background-color: #fff;
-  color: #000;
+  color: #090909;
   font-weight: 700;
   font-size: 26px;
   line-height: 30px;
@@ -80,5 +140,5 @@ ul {
 }
 
 .selected {
-  color: #000;
+  color: #090909;
 }

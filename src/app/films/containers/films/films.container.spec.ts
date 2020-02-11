@@ -4,8 +4,7 @@ import { FilmsContainer } from './films.container';
 
 describe('Films container', () => {
     let _filmsService = {
-        remove: jasmine.createSpy('remove'),
-        getFilms: jasmine.createSpy('getFilms')
+        getCinemas: jasmine.createSpy('getCinemas')
     };
 
     let _$state = {
@@ -26,14 +25,14 @@ describe('Films container', () => {
         expect(component).toBeDefined();
     }));
 
-    it('should call `filmsService.getFilms` on init', angular.mock.inject((
+    it('should call `filmsService.getCinemas` on init', angular.mock.inject((
         $componentController: any,
         filmsService: any,
         $q: angular.IQService) => {
         const component = $componentController(FilmsContainer.selector, {}, {});
-        _filmsService.getFilms.and.returnValue($q.resolve());
+        _filmsService.getCinemas.and.returnValue($q.resolve());
         component.$onInit();
 
-        expect(filmsService.getFilms).toHaveBeenCalled();
+        expect(filmsService.getCinemas).toHaveBeenCalled();
     }));
 });

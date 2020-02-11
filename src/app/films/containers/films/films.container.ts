@@ -34,10 +34,9 @@ export class FilmsContainer implements angular.IComponentOptions {
   static selector = 'films';
   static controller = FilmsController;
   static template = `
-    <div>
+    <div class="films">
       <h1>Find a Movie</h1>
       <cinema-list cinemas="$ctrl.cinemas"></cinema-list>
-      <film-list films="$ctrl.films"></film-list>
     </div>
   `;
 }

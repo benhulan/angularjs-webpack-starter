@@ -49,7 +49,7 @@ module.exports = {
 
             {
                 test: /\.(svg|jpg|png|gif)$/,
-                use: 'file-loader'
+                use: ['file-loader']
             },
 
             {
@@ -74,10 +74,10 @@ module.exports = {
         new LoaderOptionsPlugin({
             debug: true,
             options: {
-                tslint: {
-                    configuration: require('./tslint.json'),
-                    typeCheck: true
-                }
+              tslint: {
+                configuration: require('./tslint.json'),
+                typeCheck: true
+              }
             }
         }),
         new ExtractTextPlugin('css/style.css')

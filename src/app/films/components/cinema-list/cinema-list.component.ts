@@ -34,20 +34,24 @@ export class CinemaList implements angular.IComponentOptions {
   };
   static controller = CinemaListController;
   static template = `
-  <div class="section">
+  <div class="section cinema-list">
     <h4>Select Theater</h4>
-    <div ng-repeat="cinema in $ctrl.cinemas">
-      <button ng-click="$ctrl.select(cinema.id)">{{ cinema.name }}</button>
+    <div class="cinema-button-container">
+      <button ng-repeat="cinema in $ctrl.cinemas" ng-click="$ctrl.select(cinema.id)">{{ cinema.name }}</button>
     </div>
   </div>
-  <div class="section">
-    <h4 ng-if="$ctrl.films.length">Films Playing at <span class="selected">{{ selectedCinema.name }}</span></h4>
+  <br />
+  <div class="section film-list">
+    <h4 ng-if="$ctrl.films.length">Films Playing at <span class="selected"></span></h4>
+    <h4 ng-if="!$ctrl.films.length">Please Select a Theater Above</h4>
     <ul>
-      <li ng-repeat="film in $ctrl.films">
+      <div ng-repeat="film in $ctrl.films">
         <a href="https://drafthouse.com/show/{{ film.slug }}" target="_new">
-          {{ film.title }} <img src="/img/cart.svg" width="24" height="24" class="cart">
+          <li>
+            {{ film.title }} <img src="./img/cart.svg" width="24" height="24" class="cart">
+          </li>
         </a>
-      </li>
+      </div>
     </ul>
   </div>
   `;
