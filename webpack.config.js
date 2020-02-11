@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const ROOT = path.resolve( __dirname, 'src' );
 
 /**
@@ -6,7 +7,8 @@ const ROOT = path.resolve( __dirname, 'src' );
  */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     context: ROOT,
@@ -39,22 +41,19 @@ module.exports = {
             },
 
             {
-                test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader'],
-                    publicPath: '../'
-                }),
+                test: /\.css|.scss$/,
+                use: [
+                  MiniCssExtractPlugin.loader,
+                  'css-loader',
+                  'sass-loader'
+                ],
             },
 
             {
-                test: /\.(svg|jpg|png|gif)$/,
-                use: ['file-loader']
-            },
-
-            {
-                test: /\.(woff|woff2|eot|ttf)$/,
-                use: 'file-loader?outputPath=fonts/'
+                test: /\.(png|jpg|jpeg|gif|svg)$/,
+                use: [
+                 'file-loader',
+               ],
             },
 
             {
@@ -68,7 +67,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Alamo - Find a Movie',
-            template: 'index.html',
+            template: path.resolve(__dirname, 'src/public/', 'index.html'),
+            filename: 'index.html',
             inject: true
         }),
         new LoaderOptionsPlugin({
@@ -80,7 +80,10 @@ module.exports = {
               }
             }
         }),
-        new ExtractTextPlugin('css/style.css')
+        new MiniCssExtractPlugin({
+          filename: 'css/style.css'
+        }),
+        new CopyWebpackPlugin([{from: 'public'}])
     ],
 
     entry: './index.ts'

@@ -12,7 +12,7 @@ class CinemaListController {
 
   constructor(
     private filmsService: FilmsService,
-    // private $scope: any,
+    private $scope: any,
   ) {
     'ngInject';
   }
@@ -34,7 +34,6 @@ export class CinemaList implements angular.IComponentOptions {
   };
   static controller = CinemaListController;
   static template = `
-  <div class="section cinema-list">
     <h4>Select Theater</h4>
     <div class="cinema-button-container">
       <button ng-repeat="cinema in $ctrl.cinemas" ng-click="$ctrl.select(cinema.id)">{{ cinema.name }}</button>
@@ -46,9 +45,9 @@ export class CinemaList implements angular.IComponentOptions {
     <h4 ng-if="!$ctrl.films.length">Please Select a Theater Above</h4>
     <ul>
       <div ng-repeat="film in $ctrl.films">
-        <a href="https://drafthouse.com/show/{{ film.slug }}" target="_new">
+        <a ng-href="https://drafthouse.com/show/{{ film.slug }}" target="_new">
           <li>
-            {{ film.title }} <img src="./img/cart.svg" width="24" height="24" class="cart">
+            {{ film.title }} <img ng-src="images/cart.svg" width="24" height="24" class="cart" alt="cart" />
           </li>
         </a>
       </div>

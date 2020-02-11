@@ -8,6 +8,7 @@ import './vendor';
  * Import the global styles
  */
 import './index.scss';
+// import cart from './public/images/cart.svg';
 /**
  * Temporary Import angular
  * see: https://github.com/Microsoft/TypeScript/issues/10178
@@ -23,5 +24,5 @@ import { moduleName as appModule } from './app/app.module';
  * Bootstrap the application using the imported moduleName
  */
 const bootstrapModuleName = angular.module('application.bootstrap', [
-  appModule
+  appModule,
 ]).name;

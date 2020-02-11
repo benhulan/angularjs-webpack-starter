@@ -30,16 +30,16 @@ module.exports = {
                 },
                 enforce: 'pre'
             },
-            
+
             {
                 test: /\.ts$/,
                 exclude: [ /node_modules/ ],
                 use: 'awesome-typescript-loader'
             },
-            
+
             {
                 test: /\.ts$/,
-                exclude: [ 
+                exclude: [
                     /node_modules/,
                     /\.spec\.ts$/
                 ],
@@ -54,7 +54,10 @@ module.exports = {
 
             {
                 test: /\.(jpg|png|gif|svg|woff|woff2|eot|ttf)$/,
-                use: 'file-loader'
+                use: 'file-loader',
+                options: {
+                  name: './images/[hash].[ext]',
+                },
             },
 
             {
