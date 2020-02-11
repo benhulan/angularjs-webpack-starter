@@ -5,7 +5,7 @@ import * as angular from 'angular';
  * Import Module Components
  */
 import { CinemaList } from './components/cinema-list/cinema-list.component';
-import { FilmList } from './components/film-list/film-list.component';
+// import { FilmList } from './components/film-list/film-list.component';
 
 /**
  * Import Module Containers
@@ -30,7 +30,7 @@ export const moduleName =
   /**
    * Register Module Components
    */
-  .component(FilmList.selector, FilmList)
+  // .component(FilmList.selector, FilmList)
   .component(CinemaList.selector, CinemaList)
 
   /**

@@ -5,27 +5,37 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    width: 576px;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
   }
-  button {
+  a {
+    align-items: center;
     background-color: #FFF;
     border-radius: 4px;
     border: 1px solid #090909;
     color: #090909;
-    width: 176px;
-    height: 40px;
     font-size: 16px;
     font-weight: 600;
-    // float: left;
-    margin-bottom: 16px;
-    line-height: 20px;
-    align-items: center;
+    height: 40px;
     justify-content: center;
     letter-spacing: 0.5px;
+    line-height: 20px;
+    margin-bottom: 16px;
+    padding-top: 8px;
     text-transform: uppercase;
-    .active {
-      border: none;
-      border-radius: 4px;
-      background-color: #f0b323;
+    width: 176px;
+    &:hover, &:focus {
+      border: none !important;
+      background-color: #f0b323 !important;
+      color: #090909;
+    }
+    @media screen and (max-width: 768px) {
+      width: 48%;
+    }
+    @media screen and (max-width: 508px) {
+      width: 96%;
     }
   }
 }
